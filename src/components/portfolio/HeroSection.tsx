@@ -7,7 +7,7 @@ const HeroSection = () => {
   const isDark = theme === "dark";
 
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden pt-28">
+    <section className="relative flex min-h-[auto] items-center overflow-hidden pt-20 pb-10 lg:min-h-screen lg:pt-28 lg:pb-0">
       <div className="absolute inset-0 spotlight-bg" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/55 to-background" />
 
@@ -20,7 +20,7 @@ const HeroSection = () => {
       </div>
 
       <div className="container relative z-10">
-        <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="grid items-center gap-8 lg:gap-14 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="text-center lg:text-left">
             <div className="premium-border inline-flex items-center gap-2 rounded-full bg-card/60 px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
               <span className="h-2 w-2 rounded-full bg-accent" />
@@ -40,7 +40,7 @@ const HeroSection = () => {
               across education, skilling, hospitality, and service businesses.
             </p>
 
-            <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row lg:items-start">
+            <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
               <a
                 href="#contact"
                 className="hero-glow inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[hsl(38_79%_44%)] via-[hsl(42_90%_58%)] to-[hsl(47_100%_78%)] px-6 py-3.5 text-sm font-bold uppercase tracking-[0.12em] text-[hsl(226_48%_12%)] transition-transform hover:scale-[1.03]"

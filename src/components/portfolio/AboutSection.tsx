@@ -1,5 +1,5 @@
 import { CheckCircle2, Sparkles } from "lucide-react";
-import sumitPhoto from "@/assets/sumit.jpeg";
+import sumitPhoto from "@/assets/sumits.jpeg";
 import AnimateOnScroll from "./AnimateOnScroll";
 
 const highlights = [
