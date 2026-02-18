@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 216 45% 98%;
+    --foreground: 224 44% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 44% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 44% 11%;
+    --primary: 220 88% 41%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 44 92% 58%;
+    --secondary-foreground: 226 48% 12%;
+    --muted: 220 25% 93%;
+    --muted-foreground: 220 19% 41%;
+    --accent: 44 92% 58%;
+    --accent-foreground: 226 48% 12%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 30% 86%;
+    --input: 220 30% 86%;
+    --ring: 220 88% 41%;
+    --radius: 1rem;
+
+    --gold: 42 90% 58%;
+    --gold-light: 47 100% 78%;
+    --gold-dark: 38 79% 44%;
+    --navy: 224 57% 13%;
+    --navy-light: 220 60% 28%;
+
+    --surface: 0 0% 100%;
+    --surface-strong: 220 24% 96%;
+    --surface-contrast: 224 45% 12%;
+
+    --glass-bg: rgba(255, 255, 255, 0.72);
+    --glass-border: rgba(255, 255, 255, 0.72);
+    --glass-shadow: 0 18px 50px rgba(15, 29, 66, 0.14);
+
+    --hero-blob-a: radial-gradient(circle at 15% 18%, rgba(255, 216, 120, 0.28), transparent 44%);
+    --hero-blob-b: radial-gradient(circle at 85% 8%, rgba(52, 123, 255, 0.24), transparent 38%);
+    --hero-blob-c: radial-gradient(circle at 68% 84%, rgba(69, 124, 255, 0.2), transparent 36%);
+  }
+
+  .dark {
+    --background: 226 48% 7%;
+    --foreground: 214 36% 96%;
+    --card: 226 42% 10%;
+    --card-foreground: 214 36% 96%;
+    --popover: 226 42% 10%;
+    --popover-foreground: 214 36% 96%;
+    --primary: 217 92% 63%;
+    --primary-foreground: 220 45% 10%;
+    --secondary: 42 92% 58%;
+    --secondary-foreground: 220 45% 10%;
+    --muted: 225 30% 18%;
+    --muted-foreground: 216 18% 72%;
+    --accent: 42 92% 58%;
+    --accent-foreground: 220 45% 10%;
+    --destructive: 0 74% 46%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 226 30% 20%;
+    --input: 226 30% 20%;
+    --ring: 217 92% 63%;
+
+    --gold: 42 90% 58%;
+    --gold-light: 47 100% 78%;
+    --gold-dark: 38 79% 44%;
+    --navy: 226 48% 7%;
+    --navy-light: 221 58% 16%;
+
+    --surface: 226 44% 9%;
+    --surface-strong: 226 34% 13%;
+    --surface-contrast: 216 36% 96%;
+
+    --glass-bg: rgba(11, 21, 45, 0.62);
+    --glass-border: rgba(186, 217, 255, 0.16);
+    --glass-shadow: 0 22px 60px rgba(2, 7, 20, 0.6);
+
+    --hero-blob-a: radial-gradient(circle at 15% 18%, rgba(245, 185, 66, 0.24), transparent 46%);
+    --hero-blob-b: radial-gradient(circle at 85% 8%, rgba(85, 155, 255, 0.26), transparent 38%);
+    --hero-blob-c: radial-gradient(circle at 68% 84%, rgba(52, 123, 255, 0.22), transparent 38%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Manrope", sans-serif;
+    background-image: linear-gradient(180deg, hsl(var(--background)), hsl(var(--background)));
+    min-height: 100vh;
+    transition: background-color 240ms ease, color 240ms ease;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply relative overflow-hidden py-24 sm:py-28;
+  }
+
+  .section-title {
+    @apply text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl;
+  }
+
+  .section-kicker {
+    @apply text-xs font-semibold uppercase tracking-[0.36em] text-accent;
+  }
+
+  .section-rule {
+    @apply mx-auto mt-5 h-1 w-24 rounded-full bg-gradient-to-r from-accent via-gold to-primary;
+  }
+
+  .premium-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    @apply rounded-2xl;
+  }
+
+  .glass-tile {
+    @apply premium-card transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_26px_65px_rgba(23,38,77,0.25)];
+  }
+
+  .gold-text {
+    background: linear-gradient(120deg, hsl(var(--gold-dark)), hsl(var(--gold)), hsl(var(--gold-light)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .hero-glow {
+    box-shadow: 0 0 0 1px rgba(255, 208, 90, 0.45), 0 16px 44px rgba(240, 190, 70, 0.24);
+  }
+
+  .blue-glow {
+    box-shadow: 0 0 0 1px rgba(91, 160, 255, 0.45), 0 16px 50px rgba(67, 134, 255, 0.24);
+  }
+
+  .spotlight-bg {
+    background-image: var(--hero-blob-a), var(--hero-blob-b), var(--hero-blob-c);
+  }
+
+  .premium-border {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .premium-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(140deg, rgba(245, 185, 66, 0.68), rgba(58, 130, 255, 0.6), rgba(255, 255, 255, 0.52));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+
+@keyframes skill-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.18);
+    opacity: 0;
+  }
+}
+
+.skill-bar-fill {
+  transform-origin: left;
+  animation: skill-fill 1.4s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+
+.float-slow {
+  animation: float-slow 5s ease-in-out infinite;
+}
+
+.pulse-ring::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: inherit;
+  border: 1px solid rgba(245, 185, 66, 0.5);
+  animation: pulse-ring 1.9s cubic-bezier(0, 0.55, 0.45, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
