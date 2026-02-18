@@ -9,6 +9,7 @@ import SkillsSection from "@/components/portfolio/SkillsSection";
 import EducationSection from "@/components/portfolio/EducationSection";
 import ContactSection from "@/components/portfolio/ContactSection";
 import Footer from "@/components/portfolio/Footer";
+import BackToTop from "@/components/portfolio/BackToTop";
 
 const Index = () => (
   <div className="min-h-screen bg-background text-foreground">
@@ -23,6 +24,7 @@ const Index = () => (
     <EducationSection />
     <ContactSection />
     <Footer />
+    <BackToTop />
   </div>
 );
 
