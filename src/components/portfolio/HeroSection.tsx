@@ -1,4 +1,4 @@
-import { ArrowDown, Download, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Linkedin, Mail } from "lucide-react";
 import sumitPhoto from "@/assets/sumit.jpeg";
 import { useTheme } from "@/hooks/useTheme";
 
@@ -35,7 +35,7 @@ const HeroSection = () => {
             <p className="mt-6 text-lg font-semibold uppercase tracking-[0.2em] text-primary sm:text-xl">
               Senior Manager - Sales and Operations
             </p>
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-foreground/84 lg:mx-0">
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-foreground/92 lg:mx-0">
               Driving Revenue Growth, Operational Excellence and Team Performance with 15+ years of proven results
               across education, skilling, hospitality, and service businesses.
             </p>
@@ -47,14 +47,6 @@ const HeroSection = () => {
               >
                 <Mail className="h-4 w-4" />
                 Contact Now
-              </a>
-              <a
-                href="/SumitDorleResume_2025.pdf"
-                download
-                className="premium-border inline-flex items-center gap-2 rounded-xl bg-card/55 px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.12em] text-foreground transition-colors hover:text-accent"
-              >
-                <Download className="h-4 w-4" />
-                Download CV
               </a>
               <a
                 href="https://www.linkedin.com/in/sumit-dorle-4980ba1a8/"

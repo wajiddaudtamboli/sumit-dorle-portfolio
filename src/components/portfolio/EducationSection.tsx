@@ -6,19 +6,16 @@ const education = [
     degree: "Masters in Tourism Management",
     institution: "IGNOU",
     year: "2013",
-    score: "62.27% - First Division",
   },
   {
     degree: "Bachelor in Hotel and Tourism Management",
     institution: "YCMOU Nashik",
     year: "2009",
-    score: "68% - First Division",
   },
   {
     degree: "Diploma in Hotel and Tourism Management",
     institution: "YCMOU Nashik",
     year: "2008",
-    score: "73% - First Division",
   },
 ];
 
@@ -42,11 +39,10 @@ const EducationSection = () => (
               </div>
               <h3 className="text-lg font-bold text-foreground">{item.degree}</h3>
               <p className="mt-2 text-sm font-medium text-primary">{item.institution}</p>
-              <div className="mt-5 flex items-center justify-between">
+              <div className="mt-5 flex items-center justify-start">
                 <span className="rounded-full bg-accent/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-accent">
                   {item.year}
                 </span>
-                <span className="text-xs font-medium uppercase tracking-[0.08em] text-foreground/75">{item.score}</span>
               </div>
             </article>
           </AnimateOnScroll>

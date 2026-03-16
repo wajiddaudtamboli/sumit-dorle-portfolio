@@ -3,12 +3,12 @@ import sumitPhoto from "@/assets/sumits.jpeg";
 import AnimateOnScroll from "./AnimateOnScroll";
 
 const highlights = [
-  "15+ years of progressive leadership experience",
-  "Managed multi-location operations across Maharashtra",
-  "Team leadership of 10-50 members",
-  "Institutional tie-ups and strategic partnerships",
-  "Consistent revenue growth and target achievement",
-  "Customer experience and satisfaction focus",
+  "Student Admission Strategy",
+  "International Education Partnerships",
+  "Institutional Collaboration with Universities",
+  "Marketing and Outreach for Student Recruitment",
+  "Strategic Business Expansion in Education Sector",
+  "Student Counseling and End-to-End Admission Guidance",
 ];
 
 const AboutSection = () => (
@@ -55,11 +55,21 @@ const AboutSection = () => (
               Executive Snapshot
             </div>
 
-            <p className="text-base leading-relaxed text-foreground/84">
-              A seasoned corporate leader with a distinguished career spanning education, hospitality, insurance, and
-              skilling sectors. I bring strategic vision, operational rigor, and people leadership that delivers
-              measurable business outcomes through team excellence and expansion-focused execution.
-            </p>
+            <div className="space-y-4 text-base leading-relaxed text-foreground/84">
+              <p className="font-semibold text-foreground">Senior Manager, Sales and Operations</p>
+              <p>
+                Senior professional in education industry with over 10 years of dedicated experience in education
+                marketing, institutional growth, and academic business expansion, supported by 15+ years of overall
+                expertise in Sales and Strategic Marketing.
+              </p>
+              <p>
+                A Post Graduate in Hotel and Tourism Management, he brings a unique service-driven leadership approach
+                to ICS Global, where he works closely with universities, training institutions, and global education
+                partners to drive sustainable growth, international collaborations, and brand excellence in the
+                education ecosystem.
+              </p>
+              <p className="font-semibold text-foreground">His expertise includes:</p>
+            </div>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {highlights.map((item) => (

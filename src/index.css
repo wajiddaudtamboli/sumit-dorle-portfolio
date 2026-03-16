@@ -135,8 +135,8 @@
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     box-shadow: var(--glass-shadow);
-    backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
     @apply rounded-2xl;
   }
 
@@ -176,6 +176,7 @@
     padding: 1px;
     background: linear-gradient(140deg, rgba(245, 185, 66, 0.68), rgba(58, 130, 255, 0.6), rgba(255, 255, 255, 0.52));
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;

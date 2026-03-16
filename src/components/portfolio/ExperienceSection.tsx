@@ -1,4 +1,5 @@
-import { BriefcaseBusiness } from "lucide-react";
+import { useState } from "react";
+import { BriefcaseBusiness, Minus, Plus } from "lucide-react";
 import AnimateOnScroll from "./AnimateOnScroll";
 
 const timeline = [
@@ -7,9 +8,12 @@ const timeline = [
     company: "ICS Global",
     period: "Nov 2025 - Present",
     bullets: [
-      "Leading business development and operations strategy across regions",
-      "Driving revenue growth through strategic partnerships and sales excellence",
-      "Overseeing team performance, client acquisition, and operational efficiency",
+      "Managing international student recruitment strategies",
+      "Developing university partnerships and academic collaborations",
+      "Leading admission and marketing teams",
+      "Overseeing global outreach programs",
+      "Coordinating with universities for admissions and partnerships",
+      "Driving institutional growth through strategic education alliances",
     ],
   },
   {
@@ -82,11 +86,26 @@ const ExperienceSection = () => (
         </div>
       </AnimateOnScroll>
 
-      <div className="relative mx-auto max-w-5xl">
-        <div className="absolute left-[1.1rem] top-0 hidden h-full w-[2px] bg-gradient-to-b from-accent via-primary/65 to-transparent sm:block" />
+      <ExperienceTimeline />
+    </div>
+  </section>
+);
 
-        <div className="space-y-6">
-          {timeline.map((item, index) => (
+const ExperienceTimeline = () => {
+  const [expanded, setExpanded] = useState<number[]>([0]);
+
+  const toggle = (index: number) => {
+    setExpanded((prev) => (prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]));
+  };
+
+  return (
+    <div className="relative mx-auto max-w-5xl">
+      <div className="absolute left-[1.1rem] top-0 hidden h-full w-[2px] bg-gradient-to-b from-accent via-primary/65 to-transparent sm:block" />
+
+      <div className="space-y-6">
+        {timeline.map((item, index) => {
+          const isOpen = expanded.includes(index);
+          return (
             <AnimateOnScroll key={`${item.title}-${item.period}`} delay={index * 70}>
               <article className="relative sm:pl-12">
                 <span className="absolute left-0 top-7 hidden h-9 w-9 items-center justify-center rounded-full border border-accent/60 bg-card sm:inline-flex">
@@ -95,29 +114,44 @@ const ExperienceSection = () => (
 
                 <div className="glass-tile premium-border rounded-2xl p-6 sm:p-7">
                   <div className="mb-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                    <h3 className="text-lg font-bold text-foreground">{item.title}</h3>
-                    <span className="inline-flex w-fit items-center rounded-full bg-accent/12 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-accent">
-                      {item.period}
-                    </span>
+                    <div>
+                      <h3 className="text-lg font-bold text-foreground">{item.title}</h3>
+                      <p className="text-sm font-medium text-primary">{item.company}</p>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="inline-flex w-fit items-center rounded-full bg-accent/12 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-accent">
+                        {item.period}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => toggle(index)}
+                        aria-expanded={isOpen}
+                        aria-label={isOpen ? "Collapse role details" : "Expand role details"}
+                        className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-accent/40 bg-accent/10 text-accent transition hover:-translate-y-0.5 hover:border-accent/60"
+                      >
+                        {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+                      </button>
+                    </div>
                   </div>
 
-                  <p className="mb-4 text-sm font-medium text-primary">{item.company}</p>
-                  <ul className="space-y-2">
-                    {item.bullets.map((bullet) => (
-                      <li key={bullet} className="flex items-start gap-3 text-sm leading-relaxed text-foreground/82">
-                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent" />
-                        <span>{bullet}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  {isOpen && (
+                    <ul className="space-y-2">
+                      {item.bullets.map((bullet) => (
+                        <li key={bullet} className="flex items-start gap-3 text-sm leading-relaxed text-foreground/82">
+                          <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent" />
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               </article>
             </AnimateOnScroll>
-          ))}
-        </div>
+          );
+        })}
       </div>
     </div>
-  </section>
-);
+  );
+};
 
 export default ExperienceSection;
