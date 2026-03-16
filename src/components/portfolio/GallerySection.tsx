@@ -35,12 +35,11 @@ const speedSettings = {
   fast: { interval: 3000, transition: 0.45, label: "Fast" },
 } as const;
 
-type SpeedMode = keyof typeof speedSettings;
+const defaultSpeed = speedSettings.normal;
 
 const GallerySection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const [speedMode, setSpeedMode] = useState<SpeedMode>("normal");
   const [direction, setDirection] = useState(1);
   const activeItem = galleryItems[activeIndex];
 
@@ -67,10 +66,10 @@ const GallerySection = () => {
     const timer = window.setInterval(() => {
       setDirection(1);
       setActiveIndex((current) => (current + 1) % galleryItems.length);
-    }, speedSettings[speedMode].interval);
+    }, defaultSpeed.interval);
 
     return () => window.clearInterval(timer);
-  }, [isPaused, speedMode]);
+  }, [isPaused]);
 
   return (
     <section id="gallery" className="section-shell">
@@ -102,23 +101,6 @@ const GallerySection = () => {
               </p>
             </div>
 
-            <div className="mb-5 flex flex-wrap items-center justify-center gap-2 sm:justify-start">
-              {(Object.keys(speedSettings) as SpeedMode[]).map((mode) => (
-                <button
-                  key={mode}
-                  onClick={() => setSpeedMode(mode)}
-                  className={`rounded-full border px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] transition-all ${
-                    speedMode === mode
-                      ? "border-accent/70 bg-accent/20 text-accent"
-                      : "border-white/35 bg-background/60 text-foreground/70 hover:border-accent/45 hover:text-accent"
-                  }`}
-                  aria-label={`Set slideshow speed to ${speedSettings[mode].label}`}
-                >
-                  {speedSettings[mode].label}
-                </button>
-              ))}
-            </div>
-
             <div className="relative overflow-hidden rounded-3xl border border-white/35 bg-gradient-to-br from-background/70 via-background/40 to-primary/10 p-3 sm:p-4">
               <div className="relative flex h-[240px] items-center justify-center rounded-2xl bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.45),transparent_52%),radial-gradient(circle_at_80%_80%,rgba(66,133,244,0.20),transparent_44%)] sm:h-[320px] lg:h-[420px]">
                 <AnimatePresence mode="wait" initial={false} custom={direction}>
@@ -130,7 +112,7 @@ const GallerySection = () => {
                     initial={(dir) => ({ opacity: 0, x: dir > 0 ? 70 : -70, scale: 0.96 })}
                     animate={{ opacity: 1, x: 0, scale: 1 }}
                     exit={(dir) => ({ opacity: 0, x: dir > 0 ? -70 : 70, scale: 0.98 })}
-                    transition={{ duration: speedSettings[speedMode].transition, ease: "easeOut" }}
+                    transition={{ duration: defaultSpeed.transition, ease: "easeOut" }}
                     className="h-full w-full rounded-xl object-contain"
                     loading="lazy"
                     drag="x"
@@ -200,7 +182,7 @@ const GallerySection = () => {
 
             <div className="mt-5 text-center">
               <p className="text-xs font-medium tracking-[0.12em] text-foreground/60 sm:text-sm">
-                Slideshow speed: {speedSettings[speedMode].label}. Hover to pause, or use swipe, arrows, and thumbnails to move.
+                Hover to pause, or use swipe, arrows, and thumbnails to move.
               </p>
             </div>
 

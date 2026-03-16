@@ -125,7 +125,6 @@ const ExperienceTimeline = () => {
                       <button
                         type="button"
                         onClick={() => toggle(index)}
-                        aria-expanded={isOpen}
                         aria-label={isOpen ? "Collapse role details" : "Expand role details"}
                         className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-accent/40 bg-accent/10 text-accent transition hover:-translate-y-0.5 hover:border-accent/60"
                       >
