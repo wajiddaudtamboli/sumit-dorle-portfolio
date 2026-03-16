@@ -1,11 +1,13 @@
 import {
+  BookOpen,
   Briefcase,
   Building2,
+  FileText,
+  Globe2,
   GraduationCap,
   Handshake,
-  Heart,
   Megaphone,
-  Settings,
+  MessageSquare,
   Target,
   TrendingUp,
   Users,
@@ -13,16 +15,18 @@ import {
 import AnimateOnScroll from "./AnimateOnScroll";
 
 const expertise = [
-  { icon: TrendingUp, title: "Sales Strategy and Revenue Growth" },
-  { icon: Settings, title: "Operations Management" },
-  { icon: Briefcase, title: "Business Development" },
-  { icon: Megaphone, title: "Branding and Marketing" },
-  { icon: Users, title: "Team Leadership" },
-  { icon: Handshake, title: "Institutional Tie-ups" },
-  { icon: GraduationCap, title: "Training and Development" },
-  { icon: Heart, title: "Customer Experience" },
-  { icon: Target, title: "Target Planning and Execution" },
-  { icon: Building2, title: "Center and Branch Management" },
+  { icon: Handshake, title: "Global University Partnerships" },
+  { icon: Users, title: "International Student Recruitment" },
+  { icon: Target, title: "Admission Strategy and Execution" },
+  { icon: Building2, title: "Academic Institutional Collaboration" },
+  { icon: Megaphone, title: "Global Education Marketing" },
+  { icon: TrendingUp, title: "Strategic Expansion in Education Sector" },
+  { icon: Briefcase, title: "Corporate Training Programs" },
+  { icon: BookOpen, title: "Workshop Facilitation" },
+  { icon: FileText, title: "Resume Building & Career Preparation" },
+  { icon: MessageSquare, title: "Communication & Personality Development" },
+  { icon: GraduationCap, title: "Career Guidance Programs (10th/12th)" },
+  { icon: Globe2, title: "Guidance for Professional Courses & Pathways" },
 ];
 
 const ExpertiseSection = () => (
@@ -36,7 +40,7 @@ const ExpertiseSection = () => (
         </div>
       </AnimateOnScroll>
 
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
         {expertise.map((item, index) => (
           <AnimateOnScroll key={item.title} delay={index * 70} animation="scale">
             <article className="glass-tile premium-border flex h-full flex-col items-center rounded-2xl p-5 text-center">

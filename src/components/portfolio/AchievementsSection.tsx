@@ -9,6 +9,9 @@ const achievements = [
   "Led high-performing sales teams of 10-50 members",
   "Strong experience in education, skilling, and service sector growth",
   "Expertise in branding, marketing, and strategic operations",
+  "Established international university collaborations and student mobility programs",
+  "Coordinated global outreach and admissions partnerships across regions",
+  "Built cross-border institutional tie-ups supporting global education pathways",
 ];
 
 const AchievementsSection = () => (

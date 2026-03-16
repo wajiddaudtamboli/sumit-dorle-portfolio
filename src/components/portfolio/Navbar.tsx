@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import { Download, Menu, Moon, Sun, X } from "lucide-react";
+import { Menu, Moon, Sun, X } from "lucide-react";
 import { useTheme } from "@/hooks/useTheme";
 
 const links = [
   { label: "About", href: "#about" },
+  { label: "Gallery", href: "#gallery" },
   { label: "Expertise", href: "#expertise" },
   { label: "Experience", href: "#experience" },
   { label: "Achievements", href: "#achievements" },
@@ -41,10 +42,15 @@ const Navbar = () => {
         }`}
       >
         <a href="#" className="group inline-flex items-center gap-2">
-          <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-primary text-xs font-bold text-accent-foreground shadow-lg">
-            SD
+          <span className="relative inline-flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-accent to-primary shadow-lg">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/115/115893.png"
+              alt="Profile icon"
+              className="h-9 w-9 object-cover"
+              loading="lazy"
+            />
           </span>
-          <span className="hidden text-sm font-semibold tracking-[0.16em] text-foreground/90 sm:block">
+          <span className="hidden text-sm font-semibold tracking-[0.16em] text-foreground sm:block">
             SUMIT DORLE
           </span>
         </a>
@@ -54,7 +60,7 @@ const Navbar = () => {
             <a
               key={link.href}
               href={link.href}
-              className="text-[11px] font-semibold uppercase tracking-[0.16em] text-foreground/74 transition-colors hover:text-accent"
+              className="text-[11px] font-semibold uppercase tracking-[0.16em] text-foreground/92 transition-colors hover:text-accent"
             >
               {link.label}
             </a>
@@ -67,15 +73,6 @@ const Navbar = () => {
           >
             {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
           </button>
-
-          <a
-            href="/SumitDorleResume_2025.pdf"
-            download
-            className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[hsl(38_79%_44%)] via-[hsl(42_90%_58%)] to-[hsl(47_100%_78%)] px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-[hsl(226_48%_12%)] shadow-lg transition-transform hover:scale-[1.03]"
-          >
-            <Download className="h-3.5 w-3.5" />
-            Download CV
-          </a>
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
@@ -109,14 +106,6 @@ const Navbar = () => {
                 {link.label}
               </a>
             ))}
-            <a
-              href="/SumitDorleResume_2025.pdf"
-              download
-              className="mt-1 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[hsl(38_79%_44%)] via-[hsl(42_90%_58%)] to-[hsl(47_100%_78%)] px-4 py-3 text-xs font-bold uppercase tracking-[0.14em] text-[hsl(226_48%_12%)]"
-            >
-              <Download className="h-3.5 w-3.5" />
-              Download CV
-            </a>
           </div>
         </div>
       )}
