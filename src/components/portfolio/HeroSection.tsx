@@ -24,7 +24,7 @@ const HeroSection = () => {
           <div className="text-center lg:text-left">
             <div className="premium-border inline-flex items-center gap-2 rounded-full bg-card/60 px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
               <span className="h-2 w-2 rounded-full bg-accent" />
-              Available for Senior Leadership Roles
+              Driving growth in the education ecosystem
             </div>
 
             <h1 className="mt-6 text-5xl font-extrabold leading-tight text-foreground sm:text-6xl lg:text-7xl">
