@@ -3,6 +3,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Images } from "lucide-react";
 import AnimateOnScroll from "./AnimateOnScroll";
 
+import alardUniversity1 from "@/assets/Alard University.jpeg";
+import alardUniversity2 from "@/assets/Alard University-1.jpeg";
+import alardUniversity3 from "@/assets/Alard University-2.jpeg";
+import alardUniversity4 from "@/assets/Alard University-3.jpeg";
 import sumit1 from "@/assets/sumit1.jpeg";
 import sumit2 from "@/assets/sumit2.jpeg";
 import sumit3 from "@/assets/sumit3.jpeg";
@@ -16,6 +20,10 @@ import sumit10 from "@/assets/sumit10.jpeg";
 import sumit11 from "@/assets/sumit11.jpeg";
 
 const galleryItems = [
+  { src: alardUniversity1, alt: "Alard University campus event presentation photo 1" },
+  { src: alardUniversity2, alt: "Alard University campus event presentation photo 2" },
+  { src: alardUniversity3, alt: "Alard University campus event presentation photo 3" },
+  { src: alardUniversity4, alt: "Alard University campus event presentation photo 4" },
   { src: sumit1, alt: "Professional event snapshot 1" },
   { src: sumit2, alt: "Professional event snapshot 2" },
   { src: sumit3, alt: "Professional event snapshot 3" },
